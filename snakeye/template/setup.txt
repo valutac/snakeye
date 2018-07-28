@@ -1,0 +1,17 @@
+import setuptools
+
+setuptools.setup(
+    name="$pkg_name",
+    version="$pkg_version",
+    author="$author",
+    author_email="$author_email",
+    description="$description",
+    long_description="$long_description",
+    long_description_content_type="text/markdown",
+    url="$url",
+    packages=setuptools.find_packages(),
+    classifiers=(
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+    ),
+)
