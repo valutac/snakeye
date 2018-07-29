@@ -1,3 +1,3 @@
 # Snakeye - Python Packaging for Humans
 
-![Logo](assets/snakeye-logo.png)
+<center><img src="assets/snakeye-logo.png" alt="Logo" style="width:60%"></center>
