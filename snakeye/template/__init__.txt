@@ -1,0 +1,3 @@
+"""$description"""
+
+__version__ = '$pkg_version'
