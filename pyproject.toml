@@ -6,6 +6,7 @@ build-backend = "flit.buildapi"
 module = "snakeye"
 author = "Rizky Ariestiyansyah"
 author-email = "onto@valutac.com"
+description-file="README.md"
 home-page = "https://snakeye.valutac.com"
 classifiers = ["License :: OSI Approved :: MIT License"]
 requires = ["cleo","pytoml","flit"]
