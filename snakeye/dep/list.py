@@ -22,7 +22,8 @@ def get_dependencies(cfg):
 
 
 def display_deps(flit, snakeye, deps):
-    print("{} {} {}".format(flit["module"], snakeye["version"], snakeye["description"]))
+    print(flit, snakeye, deps)
+    print("{} {} {}".format(flit["module"], snakeye["pkg_version"], snakeye["description"]))
     print()
     print("Dependencies: ")
     length = len(deps)

@@ -10,10 +10,16 @@ build-backend = "flit.buildapi"
 [tool.flit.metadata]
 {metadata}
 
+[tool.snakeye.metadata]
+{snakeye_metadata}
+
 [tool.snakeye.dependencies]
 {dependencies}
 """
 
 
 def init_config(project: Project):
-    return TEMPLATE.format(metadata=toml.dumps(project.to_flit_metadata()), dependencies=toml.dumps({}))
+    dependencies = {"flit": "1.0"}
+    return TEMPLATE.format(metadata=toml.dumps(project.to_flit_metadata()),
+                           snakeye_metadata=toml.dumps(project.to_ctx()),
+                           dependencies=toml.dumps(dependencies))

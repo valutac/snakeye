@@ -27,4 +27,7 @@ class Project(object):
             'author': self.author,
             'author-email': self.email,
             'home-page': self.url,
+            'requires': ["flit"],
+            'requires-python': 3,
+            'description-file': 'README.md',
         }
