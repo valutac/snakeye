@@ -28,6 +28,6 @@ class Project(object):
             'author-email': self.email,
             'home-page': self.url,
             'requires': ["flit"],
-            'requires-python': 3,
+            'requires-python': ">=3",
             'description-file': 'README.md',
         }

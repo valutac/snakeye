@@ -21,8 +21,12 @@ def get_dependencies(cfg):
     return cfg.get("tool").get("snakeye").get("dependencies")
 
 
+def set_dependencies(cfg, deps):
+    cfg["tool"]["snakeye"]["dependencies"] = deps
+    return cfg
+
+
 def display_deps(flit, snakeye, deps):
-    print(flit, snakeye, deps)
     print("{} {} {}".format(flit["module"], snakeye["pkg_version"], snakeye["description"]))
     print()
     print("Dependencies: ")
