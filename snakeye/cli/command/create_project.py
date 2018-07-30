@@ -1,8 +1,8 @@
-import os
-
 from cleo import Command
 
-from snakeye.common.utils import ask_input, parse_template
+from snakeye.common.models import Project
+from snakeye.common.utils import ask_input
+from snakeye.project.create import create_new_project
 
 
 class CreateProject(Command):
@@ -23,36 +23,8 @@ class CreateProject(Command):
         url = ask_input('URL/Homepage: ')
         license_type = ask_input('License (mit / apache / gpl / leave blank for empty license): ')
 
-        ctx = {
-            'pkg_name': name,
-            'pkg_version': version,
-            'author': author,
-            'author_email': email,
-            'description': description,
-            'long_description': long_description,
-            'url': url,
-        }
+        project = Project(name=name, version=version, author=author, email=email, description=description,
+                          long_description=long_description, url=url, license_type=license_type)
+        create_new_project(project)
 
-        readme = parse_template("snakeye/template/readme.txt", ctx)
-        setup = parse_template("snakeye/template/setup.txt", ctx)
-
-        # create folder
-        path = "./target/" + name
-        os.mkdir(path)
-        os.mkdir(path + "/" + name)
-        open(path + "/" + name + "/__init__.py", "w").close()
-
-        file = open(path + "/README.md", "w")
-        file.write(readme)
-        file.close()
-
-        file = open(path + "/setup.py", "w")
-        file.write(setup)
-        file.close()
-
-        if license_type in ["mit", "apache", "gpl"]:
-            license_file = parse_template('template/license/' + license_type + '.txt', ctx)
-
-            file = open(path + "/LICENSE", "w")
-            file.write(license_file)
-            file.close()
+        print("Make sure to add VCS in your projects to enable build and publish")
