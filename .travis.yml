@@ -4,6 +4,13 @@ python:
 
 install:
   - pip install snakeye
+  - pip install python-coveralls
+  - pip install coverage
+  - pip install nose
 
 script:
   - snakeye
+  - nosetests --with-coverage
+
+after_success:
+  - coveralls
