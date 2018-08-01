@@ -1,4 +1,6 @@
 [![PyPI version](https://badge.fury.io/py/snakeye.svg)](https://badge.fury.io/py/snakeye)
+[![Build Status](https://travis-ci.org/valutac/snakeye.svg?branch=master)](https://travis-ci.org/valutac/snakeye)
+[![Coverage Status](https://coveralls.io/repos/github/valutac/snakeye/badge.svg?branch=master)](https://coveralls.io/github/valutac/snakeye?branch=master)
 <p align="center">
 <img src="https://raw.githubusercontent.com/valutac/snakeye/master/assets/snakeye-logo.png" alt="Logo" width="60%">
   </p>
